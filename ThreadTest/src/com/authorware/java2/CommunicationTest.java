@@ -11,6 +11,13 @@ import javax.xml.bind.SchemaOutputResolver;
  * 2.三个方法的调用者必须是同步代码块或者同步方法中的同步监视器。否则会出现异常。
  * 3.wait() notify() notifyAll() 三个方法是定义在java.lang.Object类中。
  *
+ * 面试题：sleep() 和 wait()的异同
+ * 1.相同点：一旦执行方法，都可以使得当前的线程进入阻塞状态。
+ * 2.不同点：两个方法声明的位置不同:Thread()类中声明sleep(), Object类中声明wait()。
+ *          调用的要求不同: sleep() 可以在任何场景下调用，wait()只能在同步代码块或者同步方法中调用。
+ *          关于是否释放同步监视器，如果两个方法都使用在同步代码块或者同步方法中，sleep()不会释放锁，wait()会释放锁。
+ *
+ *
  * @Author Simon Zhang
  * @Date 2021/6/21 8:37 下午
  * @Version 1.0
