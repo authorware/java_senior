@@ -38,4 +38,19 @@ public class DateTimeTest {
         Date parse1 = simpleDateFormat1.parse("2021-07-07 11:21:37");
         System.out.println(parse1);
     }
+
+    /*
+    字符串"2021-07-12"转换为java.sql.Date
+     */
+    @Test
+    public void testExer() throws ParseException {
+        String birth = "2021-07-12";
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = simpleDateFormat.parse(birth);
+        System.out.println(date);
+
+        java.sql.Date date1 = new java.sql.Date(date.getTime());
+        System.out.println(date1);
+    }
 }
